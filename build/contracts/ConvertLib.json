@@ -1,0 +1,68 @@
+{
+  "contract_name": "ConvertLib",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "name": "conversionRate",
+          "type": "uint256"
+        }
+      ],
+      "name": "convert",
+      "outputs": [
+        {
+          "name": "convertedAmount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b60908061001d6000396000f300606060405263ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166396e4ee3d8114603c575b600080fd5b6048600435602435605a565b60405190815260200160405180910390f35b8181025b929150505600a165627a7a7230582047597acb834833d58ef5569a3852fb593043ffd5a54bb6c75d95ac9caa45f1480029",
+  "networks": {
+    "1508405295108": {
+      "events": {},
+      "links": {},
+      "address": "0x0ee99483757c10086e1995ede99c75bad2d4943d",
+      "updated_at": 1508405319015
+    },
+    "1508510645944": {
+      "events": {},
+      "links": {},
+      "address": "0xf395891ef03231993d69eb132f12e513aa49a2ba",
+      "updated_at": 1508511298311
+    },
+    "1509116578877": {
+      "events": {},
+      "links": {},
+      "address": "0x6150d641020e8517dbc98b1210d02c98d86f2709",
+      "updated_at": 1509119067357
+    },
+    "1509119670304": {
+      "events": {},
+      "links": {},
+      "address": "0x6150d641020e8517dbc98b1210d02c98d86f2709",
+      "updated_at": 1509119703160
+    },
+    "1509289566245": {
+      "events": {},
+      "links": {},
+      "address": "0x6150d641020e8517dbc98b1210d02c98d86f2709",
+      "updated_at": 1509290860115
+    },
+    "1509344158107": {
+      "events": {},
+      "links": {},
+      "address": "0x6150d641020e8517dbc98b1210d02c98d86f2709",
+      "updated_at": 1509344423218
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1509344423218
+}
