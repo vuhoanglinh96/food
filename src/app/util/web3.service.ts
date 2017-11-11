@@ -5,14 +5,16 @@ import {WindowRefService} from "./window-ref.service";
 import {default as contract} from 'truffle-contract'
 import metacoin_artifacts from '../../../build/contracts/MetaCoin.json'
 import {Subject} from "rxjs";
+import { AuthHttp, JwtHelper } from 'angular2-jwt';
 
 @Injectable()
 export class Web3Service {
 
   private web3 : Web3;
-  private accounts : string[];
+  public accounts : string[];
   public ready : boolean = false;
   public MetaCoin : any;
+  jwtHelper: JwtHelper = new JwtHelper();
 
   public accountsObservable = new Subject<string[]>();
 
@@ -30,11 +32,18 @@ export class Web3Service {
 
     if (this.windowRef.nativeWindow) {
       if (this.windowRef.nativeWindow.web3) {
+        var jwt = localStorage.getItem('id_token');
+    // this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
+        var decodedJwt = this.jwtHelper.decodeToken(jwt);
+        // console.log(decodedJwt);
         console.log('Using provided web3 implementation');
         this.web3 = new Web3(this.windowRef.nativeWindow.web3.currentProvider);
+        // this.web3 = this.web3.eth.accounts.privateKeyToAccount(decodedJwt.private);
+        // var web4 = this.web3.eth.accounts.privateKeyToAccount(decodedJwt.private);
         // Bootstrap the MetaCoin abstraction for Use.
         this.MetaCoin.setProvider(this.web3.currentProvider);
-
+        // web4.eth.getAccounts(console.log)
+        console.log(this.MetaCoin);
         this.refreshAccounts();
       }
       else {
@@ -44,6 +53,10 @@ export class Web3Service {
     else {
       console.log("Can't get window reference");
     }
+  };
+
+  public createAccount() {
+    return this.web3.eth.accounts.create();
   };
 
   private refreshAccounts() {

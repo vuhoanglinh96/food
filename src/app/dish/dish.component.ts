@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {Web3Service} from "../util/web3.service";
 
@@ -9,7 +10,7 @@ import {Web3Service} from "../util/web3.service";
 })
 export class DishComponent implements OnInit {
 
-  constructor(private web3Service : Web3Service) {
+  constructor(public router: Router, private web3Service : Web3Service) {
     console.log("Constructor: " + web3Service);
   }
 
@@ -197,6 +198,11 @@ export class DishComponent implements OnInit {
     this.status = status;
   };
 
+  logout() {
+    localStorage.removeItem('id_token');
+    this.router.navigate(['login']);
+  }
+
   order(value) {
     if (!this.MetaCoin) {
       this.setStatus("Metacoin is not loaded, unable to send transaction");
@@ -245,19 +251,19 @@ export class DishComponent implements OnInit {
     });
   };
 
-  clickAddress(e) {
-    this.model.account = e.target.value;
-    this.refreshBalance();
-  }
+  // clickAddress(e) {
+  //   this.model.account = e.target.value;
+  //   this.refreshBalance();
+  // }
 
-  setAmount(e) {
-    console.log("Setting amount: " + e.target.value);
-    this.model.amount = e.target.value;
-  }
+  // setAmount(e) {
+  //   console.log("Setting amount: " + e.target.value);
+  //   this.model.amount = e.target.value;
+  // }
 
-  setReceiver(e) {
-    console.log("Setting receiver: " + e.target.value);
-    this.model.receiver = e.target.value;
-  }
+  // setReceiver(e) {
+  //   console.log("Setting receiver: " + e.target.value);
+  //   this.model.receiver = e.target.value;
+  // }
 
 }
