@@ -27,10 +27,8 @@ export class SignupComponent {
       .subscribe(
         response => {
           localStorage.setItem('id_token', response.json().id_token);
-          console.log(response.json().id_token);
+          localStorage.setItem('address', response.json().address);
           this.router.navigate(['dish']);
-          console.log(localStorage.getItem('id_token'));
-          console.log(localStorage.getItem('profile'));
         },
         error => {
           alert(error.text());

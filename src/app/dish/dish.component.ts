@@ -187,9 +187,16 @@ export class DishComponent implements OnInit {
   status = "";
 
   watchAccount() {
+    console.log(this.web3Service.accounts);
+    var acc = [this.web3Service.accounts];
+    console.log(acc);
     this.web3Service.accountsObservable.subscribe((accounts) => {
+      // this.accounts = ['0x4b7dafb95151f8ec334ba610bc74bb33ba7298c3'];
       this.accounts = accounts;
+      // console.log(this.accounts);
+      // this.model.account += this.web3Service.accounts;
       this.model.account = accounts[0];
+      // console.log(this.model.account);
       this.refreshBalance();
     });
   }

@@ -30,29 +30,23 @@ export class Web3Service {
       return;
     }
 
-    if (this.windowRef.nativeWindow) {
-      if (this.windowRef.nativeWindow.web3) {
-        var jwt = localStorage.getItem('id_token');
-    // this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
-        var decodedJwt = this.jwtHelper.decodeToken(jwt);
-        // console.log(decodedJwt);
-        console.log('Using provided web3 implementation');
-        this.web3 = new Web3(this.windowRef.nativeWindow.web3.currentProvider);
-        // this.web3 = this.web3.eth.accounts.privateKeyToAccount(decodedJwt.private);
-        // var web4 = this.web3.eth.accounts.privateKeyToAccount(decodedJwt.private);
-        // Bootstrap the MetaCoin abstraction for Use.
-        this.MetaCoin.setProvider(this.web3.currentProvider);
-        // web4.eth.getAccounts(console.log)
-        console.log(this.MetaCoin);
-        this.refreshAccounts();
-      }
-      else {
-        console.log("Not finding web3");
-      }
-    }
-    else {
-      console.log("Can't get window reference");
-    }
+    this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+    var jwt = localStorage.getItem('id_token');
+    var address = localStorage.getItem('address');
+    var decodedJwt = this.jwtHelper.decodeToken(jwt);
+    console.log(address);
+    // this.accounts = [];
+    // for this.web3.eth.accounts
+    // this.accounts = [address];
+    this.MetaCoin.setProvider(this.web3.currentProvider);
+    // for (var i = 0; i < this.web3.eth.accounts.length; i++){
+    //   if (address == this.web3.eth.accounts[i]) this.accounts = this.web3.eth.accounts[i];
+    //   this.ready = true;
+    // }
+    // this.accountsObservable.next(address);
+    // var acc = [address];
+    // this.accountsObservable.next(acc);
+    this.refreshAccounts();
   };
 
   public createAccount() {
@@ -75,6 +69,7 @@ export class Web3Service {
       if (!this.accounts || this.accounts.length != accs.length || this.accounts[0] != accs[0]) {
         console.log("Observed new accounts");
         this.accountsObservable.next(accs);
+        console.log(this.accountsObservable);
         this.accounts = accs;
       }
 

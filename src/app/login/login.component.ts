@@ -23,6 +23,7 @@ export class LoginComponent {
       .subscribe(
         response => {
           localStorage.setItem('id_token', response.json().id_token);
+          localStorage.setItem('address', response.json().address);
           this.router.navigate(['dish']);
         },
         error => {
