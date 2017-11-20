@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="vertical_align">
+    <div class="col-md-6 col-offset-3">
+      <h1>Tạo câu hỏi đi nào!</h1>
+    </div>
+    <div class="col-md-6 col-offset-3">
+      <form role="form" (submit)="make_question($event, question.value, answerA.value, answerB.value, answerC.value, answerD.value, right.value)">
+        <div class="form-group">
+          <label for="question">Câu hỏi</label>
+          <input type="text" #question class="form-control" id="question" placeholder="Nhập câu hỏi">
+        </div>
+        <div class="form-group">
+          <label for="answer-a">Đáp án A</label>
+          <input type="text" #answerA class="form-control" id="answer-a" placeholder="Nhập đáp án A">
+        </div>
+        <div class="form-group">
+          <label for="answer-b">Đáp án B</label>
+          <input type="text" #answerB class="form-control" id="answer-b" placeholder="Nhập đáp án B">
+        </div>
+        <div class="form-group">
+          <label for="answer-c">Đáp án C</label>
+          <input type="text" #answerC class="form-control" id="answer-c" placeholder="Nhập đáp án C">
+        </div>
+        <div class="form-group">
+          <label for="answer-d">Đáp án D</label>
+          <input type="text" #answerD class="form-control" id="answer-d" placeholder="Nhập đáp án D">
+        </div>
+        <div class="form-group">
+          <label for="right">Đáp án đúng</label>
+          <select class="form-control" #right id="sel1">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Đã xong</button>
+      </form>
+    </div>
+  </div>
+</div>

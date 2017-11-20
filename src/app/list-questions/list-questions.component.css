@@ -1,0 +1,18 @@
+.vertical_align {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 50vh; /* These two lines are counted as one :-)       */
+  margin: 10% 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.center_text {
+  min-width: 100%;
+}
+
+.answer {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}

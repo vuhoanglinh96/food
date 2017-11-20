@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="vertical_align" *ngIf="question && model.balance>0">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 align="center" class="center_text">Câu hỏi</h1>
+        <i align="center" >Tạo bởi: {{quizMaker.username}}</i>
+        <h3 align="center" class="center_text">
+          {{question.question}}
+        </h3>
+      </div>
+    </div>
+    <br>
+    <div class="row answer">
+      <div class="col-md-6">
+        <button class="btn btn-default btn-block" (click)="answer('A', question)">
+          <span align="left">A.</span>
+          <span>{{question.answerA}}</span>
+        </button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-default btn-block" (click)="answer('B', question)">
+          <span>B.</span>
+          <span>{{question.answerB}}</span>
+        </button>
+      </div>
+    </div>
+    <div class="row answer">
+      <div class="col-md-6">
+        <button class="btn btn-default btn-block" (click)="answer('C', question)">
+          <span>C.</span>
+          <span>{{question.answerC}}</span>
+        </button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-default btn-block" (click)="answer('D', question)">
+          <span>D.</span>
+          <span>{{question.answerD}}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="vertical_align" *ngIf="!question">
+    <h3 align="center" class="center_text">
+      Chưa có câu hỏi trong hệ thống.
+    </h3>
+  </div>
+
+  <div class="vertical_align" *ngIf="model.balance<=0">
+    <h3 align="center" class="center_text">
+      Bạn đã hết tiền
+    </h3>
+  </div>
+</div>

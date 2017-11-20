@@ -27,7 +27,7 @@ export class DishComponent implements OnInit {
     {
       "id": 1,
       "name": "Pizza bò",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "picture": "https://s3-media1.fl.yelpcdn.com/bphoto/gklba-7A-DaO4lO7fxhS6A/ls.jpg",
       "age": 3,
       "breed": "Scottish Terrier",
       "price": 100,
@@ -36,7 +36,7 @@ export class DishComponent implements OnInit {
     {
       "id": 2,
       "name": "Pizza hải sản",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "picture": "https://s3-media2.fl.yelpcdn.com/bphoto/1LfplVlca4k7WMC6LUXzPw/ls.jpg",
       "age": 2,
       "breed": "French Bulldog",
       "price": 100,
@@ -44,8 +44,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 3,
-      "name": "Melissa",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza bào ngư",
+      "picture": "https://s3-media2.fl.yelpcdn.com/bphoto/UQOlUgSGbC28e0T3kcgT6Q/ls.jpg",
       "age": 2,
       "breed": "Boxer",
       "price": 100,
@@ -53,8 +53,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 4,
-      "name": "Jeanine",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza tôm",
+      "picture": "https://s3-media3.fl.yelpcdn.com/bphoto/QjuFHjSSjVv0TyXiDfoMLg/ls.jpg",
       "age": 2,
       "breed": "French Bulldog",
       "price": 100,
@@ -62,8 +62,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 5,
-      "name": "Elvia",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza xúc xích",
+      "picture": "https://s3-media2.fl.yelpcdn.com/bphoto/LmzOcnjiJSpvDpgrFOYPCw/ls.jpg",
       "age": 3,
       "breed": "French Bulldog",
       "price": 100,
@@ -71,8 +71,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 6,
-      "name": "Latisha",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza cá ngừ",
+      "picture": "https://s3-media3.fl.yelpcdn.com/bphoto/Xbxz0GO6469hK4jh7iU-TA/ls.jpg",
       "age": 3,
       "breed": "Golden Retriever",
       "price": 100,
@@ -80,8 +80,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 7,
-      "name": "Coleman",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza hải sâm",
+      "picture": "https://s3-media3.fl.yelpcdn.com/bphoto/B5_PTbjvuDHnKPAqwX1OsA/ls.jpg",
       "age": 3,
       "breed": "Golden Retriever",
       "price": 100,
@@ -89,8 +89,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 8,
-      "name": "Nichole",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza lợn",
+      "picture": "https://s3-media2.fl.yelpcdn.com/bphoto/0annbpXRa92Bkk2EAqNZ5g/ls.jpg",
       "age": 2,
       "breed": "French Bulldog",
       "price": 100,
@@ -98,8 +98,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 9,
-      "name": "Fran",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza gà",
+      "picture": "https://s3-media2.fl.yelpcdn.com/bphoto/E3rdJbMLVqjYJLTbC-HUOA/ls.jpg",
       "age": 3,
       "breed": "Boxer",
       "price": 100,
@@ -107,8 +107,8 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 10,
-      "name": "Leonor",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza tôm hùm",
+      "picture": "https://s3-media3.fl.yelpcdn.com/bphoto/_soo_21d6iIAhMo-pwd-Tg/ls.jpg",
       "age": 2,
       "breed": "Boxer",
       "price": 100,
@@ -116,48 +116,12 @@ export class DishComponent implements OnInit {
     },
     {
       "id": 11,
-      "name": "Dean",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
+      "name": "Pizza cá hồi",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/dmeT8nPEasPmKZlMkve7Xw/ls.jpg",
       "age": 3,
       "breed": "Golden Retriever",
       "price": 100,
       "location": "Windsor, Montana"
-    },
-    {
-      "id": 12,
-      "name": "Stevenson",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
-      "age": 3,
-      "breed": "French Bulldog",
-      "price": 100,
-      "location": "Kingstowne, Nevada"
-    },
-    {
-      "id": 13,
-      "name": "Kristina",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
-      "age": 4,
-      "breed": "Golden Retriever",
-      "price": 100,
-      "location": "Sultana, Massachusetts"
-    },
-    {
-      "id": 14,
-      "name": "Ethel",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
-      "age": 2,
-      "breed": "Golden Retriever",
-      "price": 100,
-      "location": "Broadlands, Oregon"
-    },
-    {
-      "id": 15,
-      "name": "Terry",
-      "picture": "http://cdn.24.co.za/files/Cms/General/d/2097/4f579e5d46e041d387b17b23352c7520.jpg",
-      "age": 2,
-      "breed": "Golden Retriever",
-      "price": 100,
-      "location": "Dawn, Wisconsin"
     }
   ]
 
@@ -191,12 +155,8 @@ export class DishComponent implements OnInit {
     var acc = [this.web3Service.accounts];
     console.log(acc);
     this.web3Service.accountsObservable.subscribe((accounts) => {
-      // this.accounts = ['0x4b7dafb95151f8ec334ba610bc74bb33ba7298c3'];
       this.accounts = accounts;
-      // console.log(this.accounts);
-      // this.model.account += this.web3Service.accounts;
       this.model.account = accounts[0];
-      // console.log(this.model.account);
       this.refreshBalance();
     });
   }
@@ -207,6 +167,7 @@ export class DishComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('id_token');
+    localStorage.removeItem('address');
     this.router.navigate(['login']);
   }
 

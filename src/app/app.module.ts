@@ -17,6 +17,8 @@ import { SignupComponent } from './signup/signup.component';
 // import { App } from './app';
 
 import { routes } from './app.routes';
+import { QuestionComponent } from './question/question.component';
+import { ListQuestionsComponent } from './list-questions/list-questions.component';
 
 // const appRoutes: Routes = [
 //   { path: '', component: DishComponent },
@@ -36,7 +38,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     DishComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    QuestionComponent,
+    ListQuestionsComponent
     // App
   ],
   imports: [

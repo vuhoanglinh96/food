@@ -1,5 +1,7 @@
 import {Injectable, OnInit, Output, EventEmitter} from '@angular/core';
 import {default as Web3} from 'web3';
+import {default as Web3EthAccounts} from 'web3-eth-accounts';
+import {default as Web3EthPersonal} from 'web3-eth-personal';
 import {WindowRefService} from "./window-ref.service";
 
 import {default as contract} from 'truffle-contract'
@@ -21,7 +23,7 @@ export class Web3Service {
   constructor(private windowRef : WindowRefService) {
     this.MetaCoin = contract(metacoin_artifacts);
     this.checkAndRefreshWeb3();
-    setInterval(() => this.checkAndRefreshWeb3(), 100);
+    // setInterval(() => this.checkAndRefreshWeb3(), 100);
   }
 
   private checkAndRefreshWeb3() {
@@ -33,25 +35,20 @@ export class Web3Service {
     this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
     var jwt = localStorage.getItem('id_token');
     var address = localStorage.getItem('address');
+    if (!address) return;
     var decodedJwt = this.jwtHelper.decodeToken(jwt);
     console.log(address);
-    // this.accounts = [];
-    // for this.web3.eth.accounts
-    // this.accounts = [address];
     this.MetaCoin.setProvider(this.web3.currentProvider);
-    // for (var i = 0; i < this.web3.eth.accounts.length; i++){
-    //   if (address == this.web3.eth.accounts[i]) this.accounts = this.web3.eth.accounts[i];
-    //   this.ready = true;
-    // }
-    // this.accountsObservable.next(address);
-    // var acc = [address];
-    // this.accountsObservable.next(acc);
     this.refreshAccounts();
   };
 
-  public createAccount() {
-    return this.web3.eth.accounts.create();
-  };
+  public createAccount = new Promise((resolve) => {
+    var account = new Web3EthPersonal('http://localhost:8545');
+    account.newAccount('hello').then(function(res){
+      account.unlockAccount(res, 'hello', 100000);
+      resolve(res);
+    })
+  });
 
   private refreshAccounts() {
     this.web3.eth.getAccounts((err, accs) => {
@@ -66,7 +63,11 @@ export class Web3Service {
         return;
       }
 
+      var address = localStorage.getItem('address');
+      if (!address) return;
+
       if (!this.accounts || this.accounts.length != accs.length || this.accounts[0] != accs[0]) {
+        accs = [address];
         console.log("Observed new accounts");
         this.accountsObservable.next(accs);
         console.log(this.accountsObservable);
