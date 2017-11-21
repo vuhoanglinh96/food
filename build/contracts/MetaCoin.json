@@ -863,8 +863,70 @@
       },
       "address": "0xdd717d8f92b76c0591d4fb15301229b6c681793f",
       "updated_at": 1511204853530
+    },
+    "1511272901488": {
+      "events": {
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      },
+      "links": {
+        "ConvertLib": "0x6150d641020e8517dbc98b1210d02c98d86f2709"
+      },
+      "address": "0xdd717d8f92b76c0591d4fb15301229b6c681793f",
+      "updated_at": 1511272928391
+    },
+    "1511273324598": {
+      "events": {
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      },
+      "links": {
+        "ConvertLib": "0x6150d641020e8517dbc98b1210d02c98d86f2709"
+      },
+      "address": "0xdd717d8f92b76c0591d4fb15301229b6c681793f",
+      "updated_at": 1511273357218
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1511204853530
+  "updated_at": 1511273357218
 }

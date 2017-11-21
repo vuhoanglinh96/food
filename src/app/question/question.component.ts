@@ -38,4 +38,10 @@ export class QuestionComponent {
         }
       );
   }
+
+  logout() {
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('address');
+    this.router.navigate(['login']);
+  }
 }

@@ -121,6 +121,11 @@ export class ListQuestionsComponent implements OnInit {
       console.log(e);
       this.setStatus("Error sending coin; see log.");
     });
-
   };
+
+  logout() {
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('address');
+    this.router.navigate(['login']);
+  }
 }

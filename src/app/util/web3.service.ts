@@ -50,6 +50,12 @@ export class Web3Service {
     })
   });
 
+  public sendEth(sender, receiver) {
+    this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+    var amount = this.web3.toWei(3, "ether");
+    this.web3.eth.sendTransaction({from:sender, to:receiver, value: amount})
+  }
+
   private refreshAccounts() {
     this.web3.eth.getAccounts((err, accs) => {
       if (err != null) {

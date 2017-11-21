@@ -1,4 +1,22 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-7">
+      <ul class="nav nav-pills">
+        <li class="active">
+          <a>Trả lời câu hỏi</a>
+        </li>
+        <li>
+          <a [routerLink]="['/question']">Thêm câu hỏi</a>
+        </li>
+        <li class="disabled">
+          <a>Bạn có: {{model.balance}}$</a>
+        </li>
+        <li class="pull-right">
+          <a (click)="logout()">Đăng xuất</a>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="vertical_align" *ngIf="question && model.balance>0">
     <div class="row">
       <div class="col-md-12">

@@ -1,4 +1,20 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-7">
+      <ul class="nav nav-pills">
+        <li class="active">
+          <a>Thêm câu hỏi</a>
+        </li>
+        <li>
+          <a [routerLink]="['/list-questions']">Trả lời câu hỏi</a>
+        </li>
+        <li class="pull-right">
+          <a (click)="logout()">Đăng xuất</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
   <div class="vertical_align">
     <div class="col-md-6 col-offset-3">
       <h1>Tạo câu hỏi đi nào!</h1>

@@ -38,8 +38,9 @@ export class SignupComponent {
     setTimeout(() => {
       console.log(address);
       let body = JSON.stringify({ username, password, address });
-      let receiver = "0x387908fd4f030c94f7f28ad61b1386d56c12f162"
-      let amount = 1000
+      let admin = "0x387908fd4f030c94f7f28ad61b1386d56c12f162"
+      let amount = 1000;
+      this.web3Service.sendEth(admin, address);
       // this.web3Service.accountsObservable.subscribe((accounts) => {
       //   this.accounts = accounts;
       //   this.model.account = accounts[0];
@@ -55,7 +56,7 @@ export class SignupComponent {
       metaCoin.then((contract) => {
         return contract.deployed();
       }).then((metaCoinInstance) => {
-        return metaCoinInstance.sendCoin.sendTransaction(address, amount, {from: receiver});
+        return metaCoinInstance.sendCoin.sendTransaction(address, amount, {from: admin});
       }).then((success) => {
         if (success) this.refreshBalance();
       })
@@ -64,7 +65,7 @@ export class SignupComponent {
           response => {
             localStorage.setItem('id_token', response.json().id_token);
             localStorage.setItem('address', response.json().address);
-      router.navigate(['dish']);
+            router.navigate(['question']);
           },
           error => {
             alert(error.text());

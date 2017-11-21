@@ -24,7 +24,7 @@ export class LoginComponent {
         response => {
           localStorage.setItem('id_token', response.json().id_token);
           localStorage.setItem('address', response.json().address);
-          this.router.navigate(['dish']);
+          this.router.navigate(['question']);
         },
         error => {
           alert(error.text());
