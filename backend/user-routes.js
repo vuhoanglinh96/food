@@ -82,8 +82,14 @@ app.post('/question', function(req, res) {
 
 app.get('/question', function(req, res) {
   if (questions == []) return res.status(400).send("Không có câu hỏi");
-  var question = _.sample(questions);
-  var user = _.find(users, {id: question.user_id});
+  // var question = _.sample(questions);
+  var question = undefined;
+  var user = undefined;
+  var tempQuestion = _.shuffle(questions);
+  for (var i = 0; i < tempQuestion.length; i++) {
+    if (tempQuestion[i].user_id != req.query.user_id) question = tempQuestion[i];
+  }
+  if (question) var user = _.find(users, {id: question.user_id});
   res.status(201).send({
     question: question,
     user: user

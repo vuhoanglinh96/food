@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
+import { AuthHttp, JwtHelper } from 'angular2-jwt';
 import { contentHeaders } from '../common/headers';
 
 import {Web3Service} from "../util/web3.service";
@@ -11,8 +12,17 @@ import {Web3Service} from "../util/web3.service";
   styleUrls: ['./list-questions.component.css']
 })
 export class ListQuestionsComponent implements OnInit {
+  jwtHelper: JwtHelper = new JwtHelper();
+  jwt: string;
+  decodedJwt: {
+    id: number;
+  };
+  user_id: number;
 
   constructor(public router: Router, private web3Service : Web3Service, public http: Http) {
+    this.jwt = localStorage.getItem('id_token');
+    this.decodedJwt = this.jwtHelper.decodeToken(this.jwt);
+    this.user_id = this.decodedJwt.id;
     console.log("Constructor: " + web3Service);
   }
 
@@ -36,8 +46,12 @@ export class ListQuestionsComponent implements OnInit {
     username: "",
   };
 
+  isTrue : boolean;
+
   getRandomQuestion() {
-    this.http.get('http://localhost:3001/question', { headers: contentHeaders })
+    console.log(this.user_id);
+    var user_id = this.user_id
+    this.http.get('http://localhost:3001/question', {params: {user_id: user_id}})
       .subscribe(
         response => {
           this.question = response.json().question;
@@ -95,6 +109,7 @@ export class ListQuestionsComponent implements OnInit {
   };
 
   answer(answer, question) {
+    var router = this.router;
     if (!this.MetaCoin) {
       this.setStatus("Metacoin is not loaded, unable to send transaction");
       return;
@@ -105,10 +120,11 @@ export class ListQuestionsComponent implements OnInit {
     this.MetaCoin.then((contract) => {
       return contract.deployed();
     }).then((metaCoinInstance) => {
-      console.log(answer);
-      console.log(question.right);
-      if (answer != question.right)
+      if (answer != question.right){
+        this.isTrue = false;
         return metaCoinInstance.sendCoin.sendTransaction(this.quizMaker.address, 100, {from: this.model.account});
+      }
+      this.isTrue = true;
       return metaCoinInstance.sendCoin.sendTransaction(this.model.account, 100, {from: this.quizMaker.address});
     }).then((success) => {
       if (!success) {
@@ -121,6 +137,10 @@ export class ListQuestionsComponent implements OnInit {
       console.log(e);
       this.setStatus("Error sending coin; see log.");
     });
+    setTimeout(function(){
+      window.location.reload();
+      // router.navigate(['/list-questions']);
+    }, 2000);
   };
 
   logout() {

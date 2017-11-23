@@ -17,6 +17,15 @@
       </ul>
     </div>
   </div>
+  <div class="alert alert-success" *ngIf="isTrue == true">
+    <strong>Chính xác!</strong> Bạn đã nhận được 100$.<br>
+    Tự động sang câu hỏi mới trong 2 giây nữa.
+  </div>
+
+  <div class="alert alert-danger" *ngIf="isTrue == false">
+    <strong>Sai!</strong> Bạn đã bị trừ 100$.<br>
+    Tự động sang câu hỏi mới trong 2 giây nữa.
+  </div>
   <div class="vertical_align" *ngIf="question && model.balance>0">
     <div class="row">
       <div class="col-md-12">
