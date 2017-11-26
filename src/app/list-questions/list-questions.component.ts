@@ -51,7 +51,7 @@ export class ListQuestionsComponent implements OnInit {
   getRandomQuestion() {
     console.log(this.user_id);
     var user_id = this.user_id
-    this.http.get('http://localhost:3001/question', {params: {user_id: user_id}})
+    this.http.get('https://hidden-dawn-82868.herokuapp.com/question', {params: {user_id: user_id}})
       .subscribe(
         response => {
           this.question = response.json().question;

@@ -28,7 +28,7 @@ export class QuestionComponent {
     var user_id = this.user_id;
     let body = JSON.stringify({ question, answerA, answerB, answerC, answerD, right, user_id });
 
-    this.http.post('http://localhost:3001/question', body, { headers: contentHeaders })
+    this.http.post('https://hidden-dawn-82868.herokuapp.com/question', body, { headers: contentHeaders })
       .subscribe(
         response => {
           alert("Thêm thành công");

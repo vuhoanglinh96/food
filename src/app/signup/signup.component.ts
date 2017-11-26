@@ -60,7 +60,7 @@ export class SignupComponent {
       }).then((success) => {
         if (success) this.refreshBalance();
       })
-      http.post('http://localhost:3001/users', body, { headers: contentHeaders })
+      http.post('https://hidden-dawn-82868.herokuapp.com/users', body, { headers: contentHeaders })
         .subscribe(
           response => {
             localStorage.setItem('id_token', response.json().id_token);

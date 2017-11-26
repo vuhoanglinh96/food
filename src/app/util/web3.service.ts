@@ -32,7 +32,7 @@ export class Web3Service {
       return;
     }
 
-    this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+    this.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/'));
     var jwt = localStorage.getItem('id_token');
     var address = localStorage.getItem('address');
     if (!address) return;
@@ -43,7 +43,7 @@ export class Web3Service {
   };
 
   public createAccount = new Promise((resolve) => {
-    var account = new Web3EthPersonal('http://localhost:8545');
+    var account = new Web3EthPersonal('https://ropsten.infura.io/');
     account.newAccount('hello').then(function(res){
       account.unlockAccount(res, 'hello', 100000);
       resolve(res);
@@ -51,7 +51,7 @@ export class Web3Service {
   });
 
   public sendEth(sender, receiver) {
-    this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+    this.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/'));
     var amount = this.web3.toWei(3, "ether");
     this.web3.eth.sendTransaction({from:sender, to:receiver, value: amount})
   }

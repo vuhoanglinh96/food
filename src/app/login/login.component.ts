@@ -19,7 +19,7 @@ export class LoginComponent {
   login(event, username, password) {
     event.preventDefault();
     let body = JSON.stringify({ username, password });
-    this.http.post('http://localhost:3001/sessions/create', body, { headers: contentHeaders })
+    this.http.post('https://hidden-dawn-82868.herokuapp.com/sessions/create', body, { headers: contentHeaders })
       .subscribe(
         response => {
           localStorage.setItem('id_token', response.json().id_token);
